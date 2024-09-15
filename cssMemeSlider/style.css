@@ -1,8 +1,77 @@
 * {
     margin: 0;
     padding: 0;
+    scrollbar-color: transparent transparent;
+    scrollbar-width: 0px;
+}
+
+ol, li {
+    list-style: none;
 }
 
 html {
     scroll-behavior: smooth;
+}
+
+.wrapper{
+    display: block;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #b5b5b5;
+}
+
+.slider{
+    width: 90%;
+    height: 80%;
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+.mem{
+    display: flex;
+    flex-direction: column;
+    row-gap: 50px;
+}
+
+.mem_img{
+    display: block;
+    height: 80vh;
+    width: 100%;
+    object-fit: fill;
+}
+
+.slide {
+    flex: 0 0 100%;
+    width: 100%;
+    counter-increment: item;
+    scroll-snap-align: start;
+    align-items: center;
+}
+
+.slider-navigation {
+    position: relative;
+    left: 86%;
+    top: -70px;
+}
+
+.slider-navigation-list, .slider-navigation-item {
+  display: inline-block;
+}
+
+.slider-navigation-button {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    background-color: #333;
+    background-clip: content-box;
+    border: 0.25rem solid transparent;
+    border-radius: 50%;
+    font-size: 0;
+    transition: transform 0.1s;
 }
