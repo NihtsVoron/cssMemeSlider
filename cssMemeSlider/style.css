@@ -7,57 +7,57 @@
 
 ol, li {
     list-style: none;
-}
-
-html {
-    scroll-behavior: smooth;
-}
+    margin: 0;
+    padding: 0;
+  }
 
 .wrapper{
     display: block;
     max-width: 1280px;
     margin-left: auto;
     margin-right: auto;
-    background-color: #b5b5b5;
+    background-color: #333;
+    padding: 2rem;
 }
 
 .slider{
-    width: 90%;
-    height: 80%;
     display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scroll-snap-align: center;
     margin-left: auto;
     margin-right: auto;
-    padding-top: 2%;
-    padding-bottom: 2%;
 }
 
 .mem{
     display: flex;
     flex-direction: column;
-    row-gap: 50px;
+    flex-grow: 1;
+    justify-content: center;
 }
 
 .mem_img{
     display: block;
-    height: 80vh;
+    height: auto;
     width: 100%;
     object-fit: fill;
 }
 
 .slide {
-    flex: 0 0 100%;
+    flex: 2 0 100%;
     width: 100%;
     counter-increment: item;
     scroll-snap-align: start;
-    align-items: center;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
 }
 
 .slider-navigation {
     position: relative;
-    left: 86%;
-    top: -70px;
+    bottom: 2rem;
+    text-align: end;
 }
 
 .slider-navigation-list, .slider-navigation-item {
@@ -68,10 +68,73 @@ html {
     display: inline-block;
     width: 1rem;
     height: 1rem;
-    background-color: #333;
+    background-color: #62baf5;
     background-clip: content-box;
-    border: 0.25rem solid transparent;
+    border: 0.125rem solid #62baf5;
     border-radius: 50%;
     font-size: 0;
-    transition: transform 0.1s;
+    transition: 0.3s;
+    margin-left: 0.75rem;
+}
+
+.slider-navigation-button:focus {
+    background-color: #62baf5;
+}
+
+.slider-navigation-button:hover {
+    background-color: #62baf5;
+    border: 0.125rem solid azure;
+    background-color: azure;
+}
+
+.slider-navigation-button:hover {
+    background-color: #62baf5;
+    border: 0.125rem solid azure;
+    background-color: azure;
+}
+
+.slider-navigation-button:focus {
+    background-color: #333;
+}
+
+.slider-navigation-button:focus, .slider-navigation-button:target {
+    background-color: #333;
+}
+
+.mem_info{
+    color:azure;
+    display: block;
+}
+
+.form_radio_btn input[type=radio] {
+	display: none;
+}
+
+.form_radio_btn {
+	display: inline-block;
+	overflow: hidden;
+}
+
+@media (max-width: 767px) {
+    .slider-navigation {
+        bottom: 5rem;
+    }
+
+    .mem_img{
+        display: block;
+        height: auto;
+        width: 100%;
+        object-fit: fill;
+    }
+
+    .wrapper{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .slide{
+        align-items: center;
+        row-gap: 4rem;
+    }
 }
